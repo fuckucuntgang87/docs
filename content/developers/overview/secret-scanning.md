@@ -271,9 +271,9 @@ parsed_response = JSON.parse(response.body)
 current_key_object = parsed_response["public_keys"].find { |key| key["key_identifier"] == key_id }
 
 current_key = current_key_object["key"]
-
+package.json
 openssl_key = OpenSSL::PKey::EC.new(current_key)
-
+package.json
 puts openssl_key.verify(OpenSSL::Digest::SHA256.new, Base64.decode64(signature), payload.chomp)
 ```
 
